@@ -1,0 +1,19 @@
+﻿@model TP2_Gabriel_Lavoie.Models.Membres
+
+@{
+    ViewBag.Title = "DeleteMembres";
+}
+
+<h3>Etes-vous sur de vouloir suprimer ce membre?</h3>
+<div>
+   <hr/>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

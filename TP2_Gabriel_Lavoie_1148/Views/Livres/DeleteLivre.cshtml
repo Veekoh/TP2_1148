@@ -1,0 +1,20 @@
+﻿@model TP2_Gabriel_Lavoie.Models.Livres
+
+@{
+    ViewBag.Title = "DeleteLivre";
+}
+
+<h3>Etes-vous sur de vouloir suprimer ce livre?</h3>
+<div>
+    <hr />
+    
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default btn-danger" /> |
+            @Html.ActionLink("Non", "CollectionLivres")
+        </div>
+    }
+</div>

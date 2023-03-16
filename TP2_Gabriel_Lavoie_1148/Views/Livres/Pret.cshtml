@@ -1,0 +1,35 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Membres";
+}
+
+<h2>Pr&ecirc;t </h2>
+<br />
+<p><a href="@Url.Action("CreatePret", "Livres")">Faire un pret</a></p>
+<br />
+
+<table class="table  table-hover table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id du pr&ecirc;t</th>
+            <th scope="col">Id du livre</th>
+            <th scope="col">Id du membre</th>
+            <th scope="col">Date du pret</th>
+            <th scope="col">Suprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Rows.Count; i++)
+         {
+            <tr>
+                <td>@Model.Rows[i][0]</td>
+                <td>@Model.Rows[i][1]</td>
+                <td>@Model.Rows[i][2]</td>
+                <td>@Model.Rows[i][3]</td>
+                <td>
+                    <a href="@Url.Action("DeletePret", "Livres", new { @id = Model.Rows[i][0]})"><img src="~/Content/Image/Suprimer.png" alt="Suprimer" width="10" height="10" /></a>
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>
